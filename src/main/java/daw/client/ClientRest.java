@@ -26,11 +26,14 @@ public class ClientRest {
 		client.accept("application/xml");
 		token = getTokenUsingPost();
 		user = getUserUsingPost(username, password);
-		System.out.println(getRequest("node/7").getBody().getUnd().getItem().getValue());
+		System.out.println("input:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getInput());
+		System.out.println("video_id:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getVideoId());
 		System.out.println("SessionName: "+user.getSessionName());
 		System.out.println("Sessid: "+user.getSessid());
-		updateContent("body[und][0][value]", "PRUEBA 20052019", "node/7");
-		System.out.println(getRequest("node/7").getBody().getUnd().getItem().getValue());
+		updateContent("node/7", "field_youtube[und][0][input]", "https://www.youtube.com/watch?v=ZAjASemgx3E");
+		updateContent("node/7", "field_youtube[und][0][video_id]", "ZAjASemgx3E");
+		System.out.println("input:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getInput());
+		System.out.println("video_id:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getVideoId());
 	}
 
 	public static Training getRequest(String path) {
@@ -55,7 +58,7 @@ public class ClientRest {
 		return client.type(MediaType.APPLICATION_FORM_URLENCODED).post(form, Usuario.class);
 	}
 	
-	public static void updateContent(String name, String value, String path) {
+	public static void updateContent(String path, String name, String value) {
 		Form form = new Form();
 		form.set(name, value);
 		client.back(true);
