@@ -26,14 +26,17 @@ public class ClientRest {
 		client.accept("application/xml");
 		token = getTokenUsingPost();
 		user = getUserUsingPost(username, password);
-		System.out.println("input:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getInput());
-		System.out.println("video_id:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getVideoId());
-		System.out.println("SessionName: "+user.getSessionName());
-		System.out.println("Sessid: "+user.getSessid());
+		
+		getRequest("node/7").getFieldTrainingTypes().getUnd().getItem().forEach((exerciseItem) -> System.out.println(exerciseItem.getTargetId()));
+		
+		System.out.println("input: "    + getRequest("node/7").getFieldYoutube().getUnd().getItem().getInput());
+		System.out.println("video_id: " + getRequest("node/7").getFieldYoutube().getUnd().getItem().getVideoId());
+		
 		updateContent("node/7", "field_youtube[und][0][input]", "https://www.youtube.com/watch?v=ZAjASemgx3E");
 		updateContent("node/7", "field_youtube[und][0][video_id]", "ZAjASemgx3E");
-		System.out.println("input:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getInput());
-		System.out.println("video_id:"+getRequest("node/7").getFieldYoutube().getUnd().getItem().getVideoId());
+		
+		System.out.println("input: "    + getRequest("node/7").getFieldYoutube().getUnd().getItem().getInput());
+		System.out.println("video_id: " + getRequest("node/7").getFieldYoutube().getUnd().getItem().getVideoId());
 	}
 
 	public static Training getRequest(String path) {
@@ -42,7 +45,7 @@ public class ClientRest {
 		client.path(path);
 		return client.get(Training.class);
 	}
-	
+		
 	public static Token getTokenUsingPost() {
 		client.path("user/token");
 		return client.type(MediaType.APPLICATION_FORM_URLENCODED).post(null, Token.class);
