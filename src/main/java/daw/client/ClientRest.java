@@ -34,7 +34,7 @@ public class ClientRest {
 		
 		//getRequest("node/7").getFieldTrainingTypes().getUnd().getItem().forEach((exerciseItem) -> System.out.println(exerciseItem.getTargetId()));
 		
-		updateYoutubeVideo("https://www.youtube.com/watch?v=ghb6eDopW8I");
+		updateYoutubeVideo("https://www.youtube.com/watch?v=aN5s9N_pTUs");
 	}
 	
 	public static void updateYoutubeVideo(String url) {
