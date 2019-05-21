@@ -1,5 +1,5 @@
 
-package org.example.youtubeservice;
+package com.ttdev.ss;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +18,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="video_id" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -30,40 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "url",
     "videoId"
 })
-@XmlRootElement(name = "changeYoutubeVideoResponse")
-public class ChangeYoutubeVideoResponse {
+@XmlRootElement(name = "changeVideoResponse")
+public class ChangeVideoResponse {
 
-    @XmlElement(required = true)
-    protected String url;
     @XmlElement(name = "video_id", required = true)
     protected String videoId;
-
-    /**
-     * Obtiene el valor de la propiedad url.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Define el valor de la propiedad url.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUrl(String value) {
-        this.url = value;
-    }
 
     /**
      * Obtiene el valor de la propiedad videoId.

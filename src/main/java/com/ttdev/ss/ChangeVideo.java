@@ -1,5 +1,5 @@
 
-package org.example.youtubeservice;
+package com.ttdev.ss;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="in" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "in"
+    "url"
 })
-@XmlRootElement(name = "changeYoutubeVideo")
-public class ChangeYoutubeVideo {
+@XmlRootElement(name = "changeVideo")
+public class ChangeVideo {
 
     @XmlElement(required = true)
-    protected String in;
+    protected String url;
 
     /**
-     * Obtiene el valor de la propiedad in.
+     * Obtiene el valor de la propiedad url.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIn() {
-        return in;
+    public String getUrl() {
+        return url;
     }
 
     /**
-     * Define el valor de la propiedad in.
+     * Define el valor de la propiedad url.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIn(String value) {
-        this.in = value;
+    public void setUrl(String value) {
+        this.url = value;
     }
 
 }

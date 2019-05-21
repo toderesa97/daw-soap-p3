@@ -1,5 +1,5 @@
 
-package org.example.youtubeservice;
+package com.ttdev.ss;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the org.example.youtubeservice package. 
+ * generated in the com.ttdev.ss package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -23,26 +23,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.example.youtubeservice
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ttdev.ss
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link ChangeYoutubeVideo }
+     * Create an instance of {@link ChangeVideoResponse }
      * 
      */
-    public ChangeYoutubeVideo createChangeYoutubeVideo() {
-        return new ChangeYoutubeVideo();
+    public ChangeVideoResponse createChangeVideoResponse() {
+        return new ChangeVideoResponse();
     }
 
     /**
-     * Create an instance of {@link ChangeYoutubeVideoResponse }
+     * Create an instance of {@link ChangeVideo }
      * 
      */
-    public ChangeYoutubeVideoResponse createChangeYoutubeVideoResponse() {
-        return new ChangeYoutubeVideoResponse();
+    public ChangeVideo createChangeVideo() {
+        return new ChangeVideo();
     }
 
 }
