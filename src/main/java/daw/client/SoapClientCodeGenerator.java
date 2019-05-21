@@ -9,7 +9,7 @@ public class SoapClientCodeGenerator {
 		WSDLToJava.main(new String[] {
 			"-client",
 			"-d","src/main/java",
-			"classpath:SimpleService.wsdl"
+			"classpath:youtube.wsdl"
 		});
 		System.out.println("done!");
 	}

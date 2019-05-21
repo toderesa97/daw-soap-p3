@@ -5,7 +5,7 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.apache.cxf.jaxrs.ext.form.Form;
 
-import com.ttdev.ss.SimpleService_P1_Client;
+import com.crossfit.youtube.Youtube_YoutubeSOAP_Client;
 
 import daw.token.Token;
 import daw.training.Training;
@@ -34,7 +34,7 @@ public class ClientRest {
 		
 		//getRequest("node/7").getFieldTrainingTypes().getUnd().getItem().forEach((exerciseItem) -> System.out.println(exerciseItem.getTargetId()));
 		
-		updateYoutubeVideo("https://www.youtube.com/watch?v=LlY90lG_Fuw");
+		updateYoutubeVideo("https://www.youtube.com/watch?v=ghb6eDopW8I");
 	}
 	
 	public static void updateYoutubeVideo(String url) {
@@ -42,7 +42,7 @@ public class ClientRest {
 		System.out.println("Current video_id: " + getRequest(node).getFieldYoutube().getUnd().getItem().getVideoId());
 				
 		updateContent(node, "field_youtube[und][0][input]", url);
-		String video_id = SimpleService_P1_Client.getVideoIdFrom(url);
+		String video_id = Youtube_YoutubeSOAP_Client.getVideoIdFrom(url);
 		updateContent(node, "field_youtube[und][0][video_id]", video_id);
 		
 		System.out.println("New input: "    + getRequest(node).getFieldYoutube().getUnd().getItem().getInput());
