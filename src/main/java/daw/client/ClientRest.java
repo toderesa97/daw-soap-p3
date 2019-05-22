@@ -5,6 +5,7 @@ import javax.ws.rs.core.MediaType;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.apache.cxf.jaxrs.ext.form.Form;
 
+import com.crossfit.youtube.QueryInvalidURL;
 import com.crossfit.youtube.Youtube_YoutubeSOAP_Client;
 
 import daw.token.Token;
@@ -34,16 +35,20 @@ public class ClientRest {
 		
 		//getRequest("node/7").getFieldTrainingTypes().getUnd().getItem().forEach((exerciseItem) -> System.out.println(exerciseItem.getTargetId()));
 		
-		updateYoutubeVideo("https://www.youtube.com/watch?v=aN5s9N_pTUs");
+		updateYoutubeVideo("ohasdsfjioadsjfioasjdfiojasdkldf");
 	}
 	
 	public static void updateYoutubeVideo(String url) {
 		System.out.println("Current input: "    + getRequest(node).getFieldYoutube().getUnd().getItem().getInput());
 		System.out.println("Current video_id: " + getRequest(node).getFieldYoutube().getUnd().getItem().getVideoId());
 				
-		updateContent(node, "field_youtube[und][0][input]", url);
-		String video_id = Youtube_YoutubeSOAP_Client.getVideoIdFrom(url);
-		updateContent(node, "field_youtube[und][0][video_id]", video_id);
+		try {
+			String video_id = Youtube_YoutubeSOAP_Client.getVideoIdFrom(url);
+			updateContent(node, "field_youtube[und][0][input]", url);
+			updateContent(node, "field_youtube[und][0][video_id]", video_id);
+		} catch (QueryInvalidURL e) {
+			e.printStackTrace();
+		}
 		
 		System.out.println("New input: "    + getRequest(node).getFieldYoutube().getUnd().getItem().getInput());
 		System.out.println("New video_id: " + getRequest(node).getFieldYoutube().getUnd().getItem().getVideoId());
