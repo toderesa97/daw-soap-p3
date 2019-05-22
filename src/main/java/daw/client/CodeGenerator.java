@@ -13,10 +13,10 @@ public class CodeGenerator {
 		final Logger logger = LoggerFactory.getLogger(CodeGenerator.class);
 		System.setProperty("javax.xml.accessExternalSchema", "all");
 		XJCFacade.main(new String[]{
-				"-b", "src/main/resources/binding-training.xml",
+				"-b", "src/main/resources/binding-exercise.xml",
 				"-d", "src/main/java",
-				"-p", "daw.training",
-				"src/main/resources/training.xsd"
+				"-p", "daw.exercise",
+				"src/main/resources/exercise.xsd"
 		});
 		System.out.println("Done! ;)");
 	}
